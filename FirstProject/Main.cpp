@@ -1,14 +1,8 @@
-#include <SFML/Graphics.hpp>
-#include "Oyun.cpp"
-//using namespace sf;
-
-
-
-
-
+#include "Oyun.hpp"
 
 int main() {
-	Oyun oyun(680,400,3,20);
+	srand(time(0));
+	Oyun oyun(680,400,10,20);
 	oyun.oyunBaslat();
 
 

@@ -1,60 +1,36 @@
-#include <SFML/Graphics.hpp>
-#include "OyunTahtasi.cpp"
-#include "Yilan.cpp"
-#include "OyunTuru.cpp"
-#include "Elma.cpp"
-
-class Oyun {
-private:
-	sf::RenderWindow* pencere;
-	OyunTahtasi* tahta;
-	OyunTuru* tur;
-	Yilan* yilan;
-	Elma* elma;
-	int fps;
-	int kareBoyut;
-	bool devamMi;
+#include "Oyun.hpp"
 
 
-public:
-
-	Oyun(int genislik, int yukseklik , int fps,int kareBoyut) {
-		devamMi = false;
-		this->fps = fps;
-		this->kareBoyut = kareBoyut;
-		this->pencere = new sf::RenderWindow(sf::VideoMode(genislik, yukseklik), "Merhaba");
-		this->tahta = new OyunTahtasi(kareBoyut,pencere->getSize());
-		this->yilan = new Yilan(3,kareBoyut);
-		this->elma = new Elma(4, new Renk{ 255,0,0 });
-		srand(time(0));
-	}
-
-	
-	bool oyunBaslat() {
-		devamMi = true;
-		tur = new OyunTuru(pencere,tahta,fps,yilan,elma);
-		tur->turBaslat();
-		delete tur;
-		return true;
-
-	}
+Oyun::Oyun(int genislik, int yukseklik, int fps, int kareBoyut) {
+	this->devamMi = false;
+	this->fps = fps;
+	this->kareBoyut = kareBoyut;
+	this->pencere = new sf::RenderWindow(sf::VideoMode(genislik, yukseklik), "Merhaba");
+	this->yilan = new Yilan(3, kareBoyut);
+	this->elma = new Elma(4, new Renk{ 255,0,0 });
+}
 
 
-	void setSettings(int fps, int kareBoyut) {
-		this->fps = fps;
-		this->kareBoyut = kareBoyut;
-	}
+bool Oyun::oyunBaslat() {
+	this->devamMi = true;
+	this->tur = new OyunTuru(pencere, fps, yilan, elma);
+	this->tur->turBaslat();
+	delete this->tur;
+	return true;
 
-	bool oyunBittiMi() {
-		return devamMi;
-	}
-	~Oyun() {
-		delete elma;
-		delete yilan;
-		delete tahta;
-		delete pencere;
-	}
+}
 
 
+void Oyun::setSettings(int fps, int kareBoyut) {
+	this->fps = fps;
+	this->kareBoyut = kareBoyut;
+}
 
-};
+bool Oyun::oyunBittiMi() {
+	return devamMi;
+}
+Oyun::~Oyun() {
+	delete elma;
+	delete yilan;
+	delete pencere;
+}

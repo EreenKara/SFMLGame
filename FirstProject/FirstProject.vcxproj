@@ -112,11 +112,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AssemblerListingLocation>$(SolutionDir)..\..\obj\$(ProjectName)</AssemblerListingLocation>
-      <ModuleOutputFile>$(SolutionDir)..\..\obj\$(ProjectName)</ModuleOutputFile>
-      <ModuleDependenciesFile>$(SolutionDir)..\..\obj\$(ProjectName)</ModuleDependenciesFile>
-      <ObjectFileName>$(SolutionDir)..\..\obj\$(ProjectName)</ObjectFileName>
-      <ProgramDataBaseFileName>$(SolutionDir)..\..\obj\$(ProjectName)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ModuleOutputFile>$(IntDir)</ModuleOutputFile>
+      <ModuleDependenciesFile>$(IntDir)</ModuleDependenciesFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,9 +145,18 @@
     <ClCompile Include="Oyun.cpp" />
     <ClCompile Include="OyunTahtasi.cpp" />
     <ClCompile Include="OyunTuru.cpp" />
-    <ClCompile Include="Renk.cpp" />
+    <ClCompile Include="Table.cpp" />
     <ClCompile Include="Yilan.cpp" />
-    <ClCompile Include="Yon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Elma.hpp" />
+    <ClInclude Include="Oyun.hpp" />
+    <ClInclude Include="OyunTahtasi.hpp" />
+    <ClInclude Include="OyunTuru.hpp" />
+    <ClInclude Include="Renk.hpp" />
+    <ClInclude Include="Table.hpp" />
+    <ClInclude Include="Yilan.hpp" />
+    <ClInclude Include="Yon.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

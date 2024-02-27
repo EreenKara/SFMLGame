@@ -1,12 +1,5 @@
-#include <SFML/Graphics.hpp>
+#include "Table.hpp"
 
+Table::Table(sf::Clock* saat) {
 
-
-class Table {
-private:
-
-public:
-	Table(sf::Clock* saat) {
-
-	}
-};
+}

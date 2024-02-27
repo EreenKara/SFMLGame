@@ -10,27 +10,27 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AssemblerListingLocation>$(SolutionDir)\..\..\obj\$(ProjectName)</AssemblerListingLocation>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <ModuleOutputFile>$(SolutionDir)\..\..\obj\$(ProjectName)</ModuleOutputFile>
+      <ModuleOutputFile>$(IntDir)</ModuleOutputFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <ModuleDependenciesFile>$(SolutionDir)\..\..\obj\$(ProjectName)</ModuleDependenciesFile>
+      <ModuleDependenciesFile>$(IntDir)</ModuleDependenciesFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <ObjectFileName>$(SolutionDir)\..\..\obj\$(ProjectName)</ObjectFileName>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <ProgramDataBaseFileName>$(SolutionDir)\..\..\obj\$(ProjectName)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <AdditionalDependencies>sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-main-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
